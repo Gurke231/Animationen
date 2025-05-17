@@ -13,8 +13,8 @@ radius = 18.0
 height = 64.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wvn8q"]
-radius = 18.0
-height = 64.0
+radius = 28.0
+height = 86.0
 
 [sub_resource type="Animation" id="Animation_dw050"]
 resource_name = "Attack_Down"
