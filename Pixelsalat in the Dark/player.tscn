@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=3 uid="uid://clj5w1tr6pu77"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://dvr0um8t7mvfs" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://dy4yxvmkvkqy6" path="res://Ch_Spritesheet.png" id="2_hqtel"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://qduc2fm3nv6k" path="res://Textures/player.tres" id="3_hqtel"]
-[ext_resource type="Script" path="res://player_animation.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://cnre6tnxt63l0" path="res://player_animation.gd" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(91.009, 91.9734)
@@ -303,19 +303,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sweqy"]
 _data = {
-"Attack_Down": SubResource("Animation_dw050"),
-"Attack_Left": SubResource("Animation_b26j0"),
-"Attack_Right": SubResource("Animation_n7ghd"),
-"Attack_Up": SubResource("Animation_1jxqw"),
-"Idle_Down": SubResource("Animation_ivps1"),
-"Idle_Left": SubResource("Animation_urp6f"),
-"Idle_Right": SubResource("Animation_bwjto"),
-"Idle_Up": SubResource("Animation_nvl01"),
-"RESET": SubResource("Animation_hqtel"),
-"Walk_Down": SubResource("Animation_i3pqv"),
-"Walk_Left": SubResource("Animation_2hs0m"),
-"Walk_Right": SubResource("Animation_sweqy"),
-"Walk_Up": SubResource("Animation_onrkg")
+&"Attack_Down": SubResource("Animation_dw050"),
+&"Attack_Left": SubResource("Animation_b26j0"),
+&"Attack_Right": SubResource("Animation_n7ghd"),
+&"Attack_Up": SubResource("Animation_1jxqw"),
+&"Idle_Down": SubResource("Animation_ivps1"),
+&"Idle_Left": SubResource("Animation_urp6f"),
+&"Idle_Right": SubResource("Animation_bwjto"),
+&"Idle_Up": SubResource("Animation_nvl01"),
+&"RESET": SubResource("Animation_hqtel"),
+&"Walk_Down": SubResource("Animation_i3pqv"),
+&"Walk_Left": SubResource("Animation_2hs0m"),
+&"Walk_Right": SubResource("Animation_sweqy"),
+&"Walk_Up": SubResource("Animation_onrkg")
 }
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_hqtel"]
@@ -378,7 +378,7 @@ autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_sweqy")
+&"": SubResource("AnimationLibrary_sweqy")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
