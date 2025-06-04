@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://sd3ia7d2jqd5"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_dx6nr"]
+[ext_resource type="Script" uid="uid://ceunoliwm3t5r" path="res://enemy.gd" id="1_dx6nr"]
 [ext_resource type="Texture2D" uid="uid://bxm6q5earggnj" path="res://Textures/asparagus_PNG25.png" id="1_p1a38"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cr5ae"]
