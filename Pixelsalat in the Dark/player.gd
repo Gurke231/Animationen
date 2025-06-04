@@ -12,7 +12,7 @@ var hit = false
 var damage_player = 30
 #@onready get_node("AnimatedSprite2D/Area2D/CollisionShape2D").disabled = true
 @onready var timer: Timer =$Timer
-
+###alle variablen###
 
 
 
@@ -30,14 +30,22 @@ func _physics_process(delta: float) -> void:
 		print("player ist tod")
 		self.queue_free()
 
+###player tod###
+
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+
+
+
 
 	if input_vector.length() > 0:
 		input_vector = input_vector.normalized()
 
 	velocity = input_vector * speed
 	move_and_slide()
+	
+	###Movement###
+	
 	
 func update_health():
 	var healthbar = $healthbar
@@ -47,7 +55,7 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-	
+	###leben###
 func _on_regin_timer_timeout() -> void:
 	if health < 100:
 		health = health +0.25
@@ -57,7 +65,7 @@ func _on_regin_timer_timeout() -> void:
 		health = 0
 		health = 0 
 		
-		
+		###regeneration###
 		
 
 
@@ -81,7 +89,7 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	
 		
 
-		
+		###gegnerische attack###
 
 	
 	
@@ -133,7 +141,7 @@ func _on_attacking_state_timeout() -> void:
 		get_node("AnimatedSprite2D/Area2D/CollisionShape2D").disabled = false
 	
 	
-	
+	###animationen###
 	
 
 

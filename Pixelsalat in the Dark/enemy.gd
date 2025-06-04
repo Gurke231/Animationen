@@ -7,7 +7,7 @@ var health = 100
 var player_inattack_zone = false
 var damage = 30
 
-
+###alle variablen###
 
 
 func _physics_process(delta):
@@ -28,7 +28,7 @@ func _on_detection_area_body_entered(body: Node2D) -> void:
 	player_chase = true
 	print ("start playerchase")
 	
-	
+	### player verfolgung ###
 	
 func update_health():
 	var healthbar = $healthbar
@@ -45,7 +45,7 @@ func update_health():
 	else:
 		healthbar.visible = true
 		
-		
+		### gegner leben ###
 func enemy():
 	pass
 
@@ -63,7 +63,7 @@ func _OnHit(damage):
 
 #func _on_timer_2_timeout() -> void:
 	health -= 30
-
+### player damage ###
 func _ready():
 	
 	
@@ -78,3 +78,4 @@ func _on_player_hit_enemy(damage_player: int):
 func die():
 	print("Gegner ist gestorben!")
 	queue_free() 
+### player damage ###
