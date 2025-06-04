@@ -9,7 +9,7 @@ var player_alive = true
 var can_attack = true
 var attacking = false
 var hit = false
-var damage = 30
+var damage_player = 30
 #@onready get_node("AnimatedSprite2D/Area2D/CollisionShape2D").disabled = true
 @onready var timer: Timer =$Timer
 
@@ -110,27 +110,27 @@ func _on_attacking_state_timeout() -> void:
 	
 	
 	
-	#if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
-		#$AnimatedSprite2D.play("default")
-	#else:
-		#$AnimatedSprite2D.stop()
+	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		$AnimatedSprite2D.play("default")
+	else:
+		$AnimatedSprite2D.stop()
 		
-	#if Input.is_action_pressed("down"):
-		#scale.y = -1
-	#else: scale.y = 1
+	if Input.is_action_pressed("down"):
+		scale.y = -1
+	else: scale.y = 1
 	
 	
 	
-	#if Input.is_action_just_pressed("left"):
-		#rotate(-1.5707963267948966)
-	#if Input.is_action_just_released("left"):
-		#rotate(1.5707963267948966)
-	#if Input.is_action_just_pressed("right"):
-		#rotate(1.5707963267948966)
-	#if Input.is_action_just_released("right"):
-		#rotate(-1.5707963267948966)
-	#if Input.is_action_pressed("melee_attack") and can_attack:
-		#get_node("AnimatedSprite2D/Area2D/CollisionShape2D").disabled = false
+	if Input.is_action_just_pressed("left"):
+		rotate(-1.5707963267948966)
+	if Input.is_action_just_released("left"):
+		rotate(1.5707963267948966)
+	if Input.is_action_just_pressed("right"):
+		rotate(1.5707963267948966)
+	if Input.is_action_just_released("right"):
+		rotate(-1.5707963267948966)
+	if Input.is_action_pressed("melee_attack") and can_attack:
+		get_node("AnimatedSprite2D/Area2D/CollisionShape2D").disabled = false
 	
 	
 	
@@ -147,10 +147,16 @@ func _on_attacking_state_timeout() -> void:
 	#if hitbox.is_colliding():
 		
 
-#func _on_area_2d_attack_hitbox_body_entered(body: Node2D) -> void:
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy"):
-		area.OnHit(damage)
+func _on_area_2d_attack_hitbox_body_entered(body: Node2D) -> void:
+		EventBus.player_hit_enemy.emit(player_damage)
+		#area.OnHit(damage_player)
 		print("i got hit")
+
+@export var player_damage: int = 10 # Schaden, den der Spieler verursacht
+
+#func _ready():
+	
+
+
+
+		

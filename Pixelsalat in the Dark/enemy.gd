@@ -63,3 +63,18 @@ func _OnHit(damage):
 
 #func _on_timer_2_timeout() -> void:
 	health -= 30
+
+func _ready():
+	
+	
+	EventBus.player_hit_enemy.connect(Callable(self, "_on_player_hit_enemy"))
+	
+func _on_player_hit_enemy(damage_player: int):
+	health -= damage_player
+	print("Gegner wurde getroffen! Schaden: ", damage, ", Verbleibende Leben: ", health)
+	if health <= 0:
+		die()
+
+func die():
+	print("Gegner ist gestorben!")
+	queue_free() 

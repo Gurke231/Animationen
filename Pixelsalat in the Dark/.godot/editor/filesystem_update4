@@ -3,4 +3,7 @@ res://Textures/new_animation_node_blend_space_2d.tres
 res://Textures/player.tres
 res://player.tscn
 res://enemy.tscn
+res://enemy.gd
+res://map.gd
 res://player.gd
+res://event_bus.gd
