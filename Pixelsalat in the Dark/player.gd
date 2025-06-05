@@ -117,15 +117,15 @@ func _on_attacking_state_timeout() -> void:
 	attacking = false
 	
 	
-	
-	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
-		$AnimatedSprite2D.play("default")
-	else:
-		$AnimatedSprite2D.stop()
-		
-	if Input.is_action_pressed("down"):
-		scale.y = -1
-	else: scale.y = 1
+
+	#if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		#$AnimatedSprite2D.play("default")
+	#else:
+		#$AnimatedSprite2D.stop()
+		#
+	#if Input.is_action_pressed("down"):
+		#scale.y = -1
+	#else: scale.y = 1
 	
 	
 	
